@@ -30,13 +30,12 @@ document.addEventListener("DOMContentLoaded",function(){
         
         if(mostrar){
             console.log("mostrar_hidden_menu --- 2.display");
-
+            document.body.classList.add("hidden_overflow");
             menu.classList.remove("hidden");
         }else{
-
             console.log("mostrar_hidden_menu --- 2.hidden");
+            document.body.classList.remove("hidden_overflow");
             menu.classList.add("hidden");
-
         }
         console.log("mostrar_hidden_menu --- 3");
 

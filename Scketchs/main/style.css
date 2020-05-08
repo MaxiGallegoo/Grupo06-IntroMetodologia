@@ -162,3 +162,6 @@ div{
     left: 10%;
     overflow: hidden;
 }
+.hidden_overflow{
+    overflow: hidden;
+}
