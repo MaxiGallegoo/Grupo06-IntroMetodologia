@@ -73,7 +73,7 @@ div{
     margin-top: 55px;
     margin-bottom: 6px;
     min-height: 92%;
-    background-image: linear-gradient(#12EBE0,#004EFF);
+    background-image: linear-gradient(to top,#12EBE0,#A7CBE8);
     float: left;
     text-align: center;
     font-family: sans-serif;
@@ -150,7 +150,7 @@ div{
 
 }
 .hidden_menu_title h2, .hidden_menu_option_desc p{
-    color : blue;
+    color : rgb(0,0,200);
 
 }
 .hidden_menu_option_desc{
