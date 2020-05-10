@@ -83,15 +83,13 @@ div{
     text-align: center;
     font-family: sans-serif;
 }
-.viajes p, .viajes h2{
-    color: white;
-}
 
 .viaje_individual{
+    color: white;
     margin: 3%;
-    width: 94%;
+    width: 92%;
     height: auto;
-    padding: 1px 0;
+    padding: 1px 5px;
     border-radius: 30px;
     background-image: linear-gradient(#004EFF,#0039ee);
 }
@@ -111,6 +109,7 @@ div{
     bottom: 0;
 }
 #hidden-new-menu,#hidden-user-menu{
+    color: #000078;
     border-radius: 0;
     z-index: 1;
     position: fixed;
@@ -147,11 +146,6 @@ div{
     right: 10%;
     height: auto;
     float: right;
-
-}
-.hidden_menu_title h2, .hidden_menu_option_desc p{
-    color : rgb(0,0,200);
-
 }
 .hidden_menu_option_desc{
     position: relative;
@@ -164,4 +158,35 @@ div{
 }
 .hidden_overflow{
     overflow: hidden;
+}
+
+
+
+
+
+.viaje_ind_pag_img{
+    float: left;
+    width: 20%;
+    height: auto;
+    margin: 2% 0 2% 5%;
+}
+.viaje_ind_pag_txt{
+    color: #000078;
+    text-align: left;
+    float: right;
+    width: 62%;
+    margin: 7% 2%;
+    vertical-align: top;
+
+}
+.viaje_ind_pag_plan{
+    position: relative;
+    padding: 0;
+    width: 98%;
+    height: 3%;
+    overflow: hidden;
+
+}
+.vuelo_forzar_mas_alto{
+    top: -200px;
 }
