@@ -190,3 +190,39 @@ div{
 .vuelo_forzar_mas_alto{
     top: -200px;
 }
+
+
+table{
+    color: #000078;
+    width: 98.4%;
+    margin: 1%;
+    background-color: #000078;
+    border-radius: 20px;
+    border: solid #000078 1px;
+}
+tr:nth-child(odd){
+    background-color: #A7CBE8;
+    color: #000078;
+}
+tr{
+    border-radius: 10px;
+    width: 98%;
+    background-color: #0000F8;
+    color: #12EBE0;
+    margin: 2px ;
+}
+td{
+    width: 49.5%;
+}
+tr:first-child td:first-child{
+    border-top-left-radius: 20px;
+}
+tr:first-child td:last-child{
+    border-top-right-radius: 20px;
+}
+tr:last-child td:first-child{
+    border-bottom-left-radius: 20px;
+}
+tr:last-child td:last-child{
+    border-bottom-right-radius: 20px;
+}

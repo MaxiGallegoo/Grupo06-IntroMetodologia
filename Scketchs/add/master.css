@@ -85,3 +85,11 @@ label{
 .hidden{
     display: none;
 }
+.bot_absolute{
+    position: absolute;
+    bottom: 10px;
+}
+.rig_absolute{
+    position: absolute;
+    right: 4px;
+}
