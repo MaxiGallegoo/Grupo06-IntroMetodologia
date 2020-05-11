@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar nuevo plan</title>
+    <link rel="stylesheet" href="master.css">
+</head>
+<body>
+    <div class="content">
+        <h2 id="title">Agregar un nuevo plan</h2>
+        <img src="add_plan_icono.svg" id="add_plan_icono">
+
+        <label for="">Viaje</label><select name="" id="">
+            
+            <option value="">Negocios - Azul</option>
+            <option value="">Negocios - Olavarria</option>
+            <option value="">Negocios - La Plata</option>
+            <option value="">Vacaciones - Punta del Este</option>
+
+        </select>
+
+
+        <label for="">Tipo de plan</label>
+        <select name="" id="tipo_plan">
+
+            <option value="0">Otro</option>
+            <option value="1">Vuelo</option>
+            <option value="2">Hotel</option>
+
+        </select>
+
+        <form action="" id="form_hidden_vuelo">
+            <label for="">Compañia</label>
+            <select name="" id="menu_select_vuelo">
+
+                <option value="">Aerolineas Argentinas</option>
+                <option value="">AmasZonas Uruguay</option>
+                <option value="">American Jet</option>
+                <option value="">Andes Lineas Aereas</option>
+                <option value="">Austral Lineas Aereas</option>
+                <option value="">Avianca Argentina</option>
+                <option value="">FlyBondi</option>
+                <option value="">JetSmart</option>
+
+            </select>
+            
+            <label for="">Numero de Vuelo</label>
+            <input type="text">
+            <label for="">Fecha</label>
+            <input type="date">
+        </form>
+
+        <form action="" id="form_hidden_hotel">
+            <label for="">Nombre del Hotel</label>
+            <input type="text">
+            <label for="">Direccion</label>
+            <input type="text">
+        </form>
+
+        <label>Titulo</label><input id="input_titulo_plan" type="text" class="w3-input" placeholder="EjemploPlan">
+
+        <div class="boton_finalizar">
+            <p>Guardar Plan</p>
+        </div>
+
+        <div class="boton_finalizar">
+            <p>Cancelar</p>
+        </div>
+
+    </div>
+
+    <script type="text/javascript" src="behav.js"></script>
+</body>
+</html>

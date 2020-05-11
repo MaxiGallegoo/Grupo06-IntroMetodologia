@@ -1,7 +1,7 @@
 body{
     
     background-image: linear-gradient(blue , rgb(0,0,200));
-    color:rgb(0,0,200);
+    color:rgb(0,0,120);
     font-size: 20px;
     width: 348px;
     height: 620px;
@@ -18,7 +18,7 @@ label, input{
     width: 96%;
     float: left;
 }
-input{
+input, select{
 
     background-color: inherit;
     border: none;
@@ -29,8 +29,12 @@ input{
     font-family: sans-serif;
     font-size: 14px;
 }
+select{
+    margin-top: 3px;
+    width: 100%;
+}
 ::placeholder{
-    color: rgb(70,70,255);
+    color: rgb(27, 27, 43);
     font-size: 14px;
 }
 label{
@@ -49,7 +53,7 @@ label{
     margin-left: 0;
 }
 
-#add_viaje_icono{
+#add_viaje_icono, #add_plan_icono{
     float: left;
     width: 60px;
     height: auto;
@@ -77,4 +81,7 @@ label{
     color:white;
     font-size: 14px;
     font-weight: bold;
+}
+.hidden{
+    display: none;
 }
