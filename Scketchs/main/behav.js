@@ -3,9 +3,21 @@ document.addEventListener("DOMContentLoaded",function(){
 
     console.log("Working -- 0");
     
+    let logged = true;
+
+    document.querySelector("#ingresar").addEventListener("click" , function(){
+        mostrar_hidden_menu(false,0);
+        logged = true;
+    });
+    
+    document.querySelector("#registrarse").addEventListener("click" , function(){
+        mostrar_hidden_menu(false,0);
+        logged = true;
+    });
+    document.querySelector("#user_menu_cerrar_unlogged").addEventListener("click",function(){mostrar_hidden_menu(false,0)});
 
     document.querySelector("#menu_usuario").addEventListener("click", function(){mostrar_hidden_menu(true,0)});
-    document.querySelector("#user_menu_cerrar").addEventListener("click",function(){mostrar_hidden_menu(false,0)});
+    document.querySelector("#user_menu_cerrar_logged").addEventListener("click",function(){mostrar_hidden_menu(false,0)});
     
     document.querySelector("#agregar_viaje").addEventListener("click", function(){mostrar_hidden_menu(true,1)});
     document.querySelector("#new_menu_cerrar").addEventListener("click",function(){mostrar_hidden_menu(false,1)});
@@ -20,7 +32,12 @@ document.addEventListener("DOMContentLoaded",function(){
         switch(id_menu){
 
             
-            case 0: menu =  document.querySelector("#hidden-user-menu");
+            case 0: 
+            console.log("switch debug --- 0.0");
+            if(logged) menu =  document.querySelector("#hidden-user-menu-logged");
+            else menu =  document.querySelector("#hidden-user-menu-unlogged");
+            console.log("switch debug --- 1.0");
+
             break;
             case 1: menu = document.querySelector("#hidden-new-menu");
             break;
@@ -41,6 +58,8 @@ document.addEventListener("DOMContentLoaded",function(){
 
     }
 
+    mostrar_hidden_menu(false,0);
+    logged=false;
     mostrar_hidden_menu(false,0);
     mostrar_hidden_menu(false,1);
 
