@@ -1,4 +1,10 @@
 # Grupo06-IntroMetodologia
+
+# Criterio de DONE
+El código deberá estar commiteado, mergeado a master y deberá ser testeado por mínimo de dos integrantes del equipo que puedan validar el correcto funcionamiento de la implementación.
+
+
+# Organización
 Este es el repo global donde subiran el contenido que vayan haciendo
 
 El flujo de trabajo es el siguiente:
@@ -14,3 +20,5 @@ Cada vez que inicien su maquina deben traerse los cambios de la rama glboal en l
 Trabajan en sus locales creando una branch para el ticket o tarea que estén realizando.
 Subirán a su origin los cambios que hayan realizados y desde github (Desde la pagina) harán Pull Request a este repositorio para que los cambios se suban.
 El dueño del repo u otro deberá aprobar los cambios para que puedan ser mergeados a global.
+
+.
