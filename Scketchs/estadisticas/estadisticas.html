@@ -34,8 +34,45 @@
         </div>
 
     </div>
-    <div id="hidden-user-menu">
-        <img src="../main/cerrar.svg" id="user_menu_cerrar" alt="">
+    <div id="hidden-user-menu-unlogged">
+        <img src="../main/cerrar.svg" id="user_menu_cerrar_unlogged" alt="">
+        <div class="hidden_menu_option top">
+
+            <img src="../main/login_user.svg" class="hidden_menu_icon" alt="">
+            <div class="hidden_menu_title">
+                <h2>Ingresar</h2>
+            </div>
+            <div class="hidden_menu_option_desc hidden-user-menu-form">
+                <label for="">Usuario:</label>
+                <input type="text" name="" id="" value="user_ejemplo">
+                <label for="">Contrase&ntildea:</label>
+                <input type="password" value="user_ejemplo">
+                <input id="ingresar" type="button" value="Ingresar">
+            </div>
+
+        </div>
+        <div class="hidden_menu_option bot">
+
+            <img src="../main/crear_nuevo_usuario.svg" class="hidden_menu_icon" alt="">
+            <div class="hidden_menu_title">
+                <h2>Registrarse</h2>
+            </div>
+            <div class="hidden_menu_option_desc hidden-user-menu-form">
+                <label for="">Nuevo usuario:</label>
+                <input type="text" name="" id="" value="user_ejemplo">
+                <label for="">Nueva contrase&ntildea:</label>
+                <input type="password" value="user_ejemplo">
+                <label for="">Escribe la contrase&ntildea nuevamente:</label>
+                <input type="password" value="user_ejemplo">
+                <input id="registrarse" type="button" value="registrarse">
+            </div>
+
+        </div>
+
+
+    </div>
+    <div id="hidden-user-menu-logged">
+        <img src="../main/cerrar.svg" id="user_menu_cerrar_logged" alt="">
         <div class="hidden_menu_option top">
 
             <img src="../main/configuracion_user.svg" class="hidden_menu_icon" alt="">
@@ -59,8 +96,9 @@
 
         </div>
 
-
     </div>
+
+
     <div class="content">
         <div class="sub_content" id="agregar_viaje">
             <img class="sub_content_image" id="add_viaje_icon"  src="../main/new.svg" alt="">
