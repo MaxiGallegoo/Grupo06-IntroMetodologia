@@ -3,6 +3,8 @@
 # Criterio de DONE
 El código deberá estar commiteado, mergeado a master y deberá ser testeado por mínimo de dos integrantes del equipo que puedan validar el correcto funcionamiento de la implementación.
 
+# Sketch 
+https://docs.google.com/presentation/d/1ih_QjWt1792D86FPbh7c67pln_MduLm2LpIjk1jECfY/edit?ts=5eb899da#slide=id.p
 
 # Organización
 Este es el repo global donde subiran el contenido que vayan haciendo
