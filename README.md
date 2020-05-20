@@ -3,7 +3,7 @@
 # Criterio de DONE
 1. Verificar que se respete el criterio de aceptación de cada user storie.
 2. Cada commit debe contemplar una breve descripción de lo realizado y el número de referencia a la tarea.
-3. Cada tarea que se encuentre en DONE debe poseer el link al commit que le corresponda.
+3. Cada tarea finalizada debe poseer el link al commit que le corresponda.
 4. Debe estar testeado manualmente por un mínimo de dos integrantes del equipo que pueden validar el correcto funcionamiento de lo implementado.
 
 
