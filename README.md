@@ -1,7 +1,11 @@
 # Grupo06-IntroMetodologia
 
 # Criterio de DONE
-El código deberá estar commiteado, mergeado a master y deberá ser testeado por mínimo de dos integrantes del equipo que puedan validar el correcto funcionamiento de la implementación.
+1. Verificar que se respete el criterio de aceptación de cada user storie.
+2. Cada commit debe contemplar una breve descripción de lo realizado y el número de referencia a la tarea.
+3. Cada tarea que se encuentre en DONE debe poseer el link al commit que le corresponda.
+4. Debe estar testeado manualmente por un mínimo de dos integrantes del equipo que pueden validar el correcto funcionamiento de lo implementado.
+
 
 # Sketch 
 https://docs.google.com/presentation/d/1ih_QjWt1792D86FPbh7c67pln_MduLm2LpIjk1jECfY/edit?ts=5eb899da#slide=id.p
