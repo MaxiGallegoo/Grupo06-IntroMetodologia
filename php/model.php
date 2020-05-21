@@ -1,6 +1,6 @@
 <?php
 
-class planes_model{
+class model{
 
     private $db;
     private $tabla_estadisticas;
