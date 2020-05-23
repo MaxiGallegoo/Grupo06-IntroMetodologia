@@ -17,4 +17,11 @@ class model{
         return $sql->fetch(PDO::FETCH_OBJ);
     }
 
+    //GetEstadísticas() de todos los viajes
+    public function get_estadisticas_globales(){
+        $sql = $this->db->prepare("SELECT * FROM".$this->tabla_estadisticas);
+        $sql->execute();
+        return $sql->fetchAll(PDO::FETCH_ASSOC)
+    }
+
 }
