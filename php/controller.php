@@ -11,6 +11,6 @@
             $this->view = new view();
         }
 		public function index(){
-				$this->view->displayIndex();
-		}	
+    		$this->view->displayIndex();
+		}
     }
