@@ -11,6 +11,11 @@
         public function displayIndex(){
             $this->plantilla->display("templates/index.tpl");
         }
+
+        public function mostrar_estadisticas_globales($Estadisticas){
+            $this->plantilla->assign('Estadisticas',$Estadisticas);
+            $this->plantilla->display("templates/estadisticas_globales.tpl");
+        }
 		
 		public function verMapa($id){
 			if ($id==1){
