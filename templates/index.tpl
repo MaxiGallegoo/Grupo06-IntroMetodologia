@@ -8,5 +8,7 @@
 </head>
 <body>
     PÁGINA DE PORTADA
+	</br><a href="{BASE_URL}/mapa/1">Ver viaje 1</a>
+	</br><a href="{BASE_URL}/mapa/2">Ver viaje 2</a>
 </body>
 </html>
