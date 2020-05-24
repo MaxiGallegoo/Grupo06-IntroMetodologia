@@ -13,4 +13,9 @@
 		public function index(){
     		$this->view->displayIndex();
 		}
+		public function verMapa($params = null){
+			$id=$params[":ID"];
+    		$this->view->verMapa($id);
+		}
+		
     }
