@@ -15,7 +15,7 @@
         public function mostrar_estadisticas_globales($Estadisticas){
             $this->plantilla->assign('Estadisticas',$Estadisticas);
             $this->plantilla->display("templates/estadisticas_globales.tpl");
-        }
+		}
 		
 		public function verMapa($id){
 			if ($id==1){
@@ -40,5 +40,7 @@
 			$this->plantilla->assign('lista',json_encode($lista));			
 			$this->plantilla->display("map.tpl");
 		}
+
+
     }
     
