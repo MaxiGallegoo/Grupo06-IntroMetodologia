@@ -21,7 +21,16 @@
             $this->plantilla->assign('Estadistica',$Estadistica);
             $this->plantilla->display("templates/estadisticas.tpl");
 		}
-		
+		public function verEstadisticas($id){
+			if($id==1){
+				$this->plantilla->assign('Estadistica',$Estadistica);
+				$this->plantilla->display("templates/estadistica.tpl");
+			}
+			else{
+				$this->plantilla->assign('Estadistica',$Estadistica);
+				$this->plantilla->display("templates/estadistica2.tpl");
+			}
+		}
 		public function verMapa($id){
 			if ($id==1){
 				$punto1=[41.393206, 2.192809,"Hotel Marina Barcelona"];

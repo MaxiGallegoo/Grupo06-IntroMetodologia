@@ -16,7 +16,13 @@
 		public function verMapa($params = null){
 			$id=$params[":ID"];
     		$this->view->verMapa($id);
-		}
+        }
+        
+        public function verEstadistica($params = null){
+			$id=$params[":ID"];
+            $this->view->verEstadisticas($id);
+        }
+        
 		function InsertEstadistica(){
             $km_recorrido = $_POST["km_recorridos"];
             $cant_paises_visitados = $_POST["cant_paises_visitados "];
