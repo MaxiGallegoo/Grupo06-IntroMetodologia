@@ -17,5 +17,13 @@
 			$id=$params[":ID"];
     		$this->view->verMapa($id);
 		}
-		
+		function InsertEstadistica(){
+            $km_recorrido = $_POST["km_recorridos"];
+            $cant_paises_visitados = $_POST["cant_paises_visitados "];
+            $huella_carbono = $_POST["huella_carbono"];
+            $horas_viajadas = $_POST["horas_viajadas"];
+            if(isset($km_recorrido,$cant_paises_visitados,$huella_carbono,$horas_viajadas)){
+              $this ->model ->InsertEstadistica($km_recorrido,$cant_paises_visitados,$huella_carbono,$horas_viajadas);
+            }
+        }
     }
