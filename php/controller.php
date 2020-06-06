@@ -1,6 +1,7 @@
 <?php
     require_once "php/model.php";
     require_once "php/view.php";
+    require_once "php/isset_helper.php";
 
     class controller{
         private $model;
@@ -28,7 +29,7 @@
             $this->view->verEstadisticas($id);
         }
         
-		function InsertEstadistica(){
+		public function InsertEstadistica(){
             $km_recorrido = $_POST["km_recorridos"];
             $cant_paises_visitados = $_POST["cant_paises_visitados "];
             $huella_carbono = $_POST["huella_carbono"];
@@ -37,6 +38,24 @@
               $this ->model ->InsertEstadistica($km_recorrido,$cant_paises_visitados,$huella_carbono,$horas_viajadas);
             }
         }
+
+    //Recive id_viaje como parámetro en caso que el insert se realice desde un viaje ya creado, pero también funciona llamando la función sin parámetros.
+    //Los valores que pueden ser 'Null' generan error en el validData(), habría que establecer un 'equivalente' a null.
+        public function insertHotel($id_viaje = null){
+
+            $id_hotel;
+            // isset_helpet->validData($arr , $keys);
+            // [IMPORTANTE] Las keys dentro del array deben ser iguales a los nombres de los inputs del .tpl.
+            if(validData(null /* $_POST */ , array("titulo","nombre_hotel","direccion_hotel","cant_personas","cant_habitaciones","fecha_in","fecha_out","descripcion","tipo_habitaciones","servicios_hotel"))){
+                
+                $id_hotel = $this->model->add_hotel($_POST['titulo'],$_POST['nombre_hotel'],$_POST['direccion_hotel'],$_POST['cant_personas'],$_POST['cant_habitaciones'],$_POST['fecha_in'],$_POST['fecha_out'], $id_viaje ,$_POST['descripcion'],$_POST['tipo_habitaciones'],$_POST['servicios_hotel']);
+            }else{
+                //Error en carga de datos.
+                $id_hotel = -2; //-2 para diferenciarlo del error en el model/DB.
+            }
+            
+        }
+
 
 
 

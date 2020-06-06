@@ -6,11 +6,15 @@
 	
     $router = new Router();
     $router->addRoute("mapa/:ID","GET","controller","verMapa");
+
+    //$router->addRoute("hotel/nuevo","GET","controller","displayAddHotel"); (Todavía no implementado).
+    $router->addRoute("hotel/nuevo","POST","controller","insertHotel");
     
 
-
+    /*
     //Hardcode para testing.
     $router->addRoute("hardcode_testing_addHotel","GET","controller","testingModel_addHotel");
+    */
 
     $router->setDefaultRoute("controller","index");
 	
