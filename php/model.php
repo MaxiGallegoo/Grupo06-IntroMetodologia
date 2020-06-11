@@ -89,6 +89,13 @@ class model{
         $sql->execute(array($id_plan));
         return $sql->fetch(PDO::FETCH_OBJ);
     }
+    
+    public function get_titulo_plan($id_plan){
+        //Select from tabla_hotel 1 / 0 hoteles con esa id unica.
+        $sql = $this->db->prepare("SELECT titulo FROM ". $this->tabla_plan ." WHERE (id_plan = ?)");
+        $sql->execute(array($id_plan));
+        return $sql->fetch(PDO::FETCH_OBJ);
+    }
     public function add_hotel_test($id_viaje, $titulo, $desc){
 
         $sql = $this->db->prepare("INSERT INTO ". $this->tabla_plan ."(´viaje_id_viaje´,´tipo´,´titulo´,´descripcion´,´latitud´,´longitud´) VALUES (?,?,?,?,?,?)");
