@@ -43,7 +43,19 @@
     //Los valores que pueden ser 'Null' generan error en el validData(), habría que establecer un 'equivalente' a null.
         public function insertHotel($id_viaje = null){
 
-            $id_hotel;
+            /*
+            
+            $this->view->display_cargando();
+
+            */ 
+
+            if(validData($id_viaje, array(":ID"))){
+                $id_viaje = $id_viaje[":ID"];
+            }
+
+
+            //Ininializa en 0 para que, en caso que no sea modificado, falle el if;
+            $id_hotel = 0;
             // isset_helpet->validData($arr , $keys);
             // [IMPORTANTE] Las keys dentro del array deben ser iguales a los nombres de los inputs del .tpl.
             if(validData(null /* $_POST */ , array("titulo","nombre_hotel","direccion_hotel","cant_personas","cant_habitaciones","fecha_in","fecha_out","descripcion","tipo_habitaciones","servicios_hotel"))){
@@ -53,6 +65,19 @@
                 //Error en carga de datos.
                 $id_hotel = -2; //-2 para diferenciarlo del error en el model/DB.
             }
+
+            /*
+
+            //Si id_hotel es menor a 1, entonces falló el insert.
+            if($id_hotel>0){
+                $titulo = $this->model->get_titulo_plan($id_hotel);
+                $this->view->display_success_add_hotel($titulo);
+            }else{
+                $this->view->display_fail_add_hotel();
+            }
+            */
+
+
             
         }
 
