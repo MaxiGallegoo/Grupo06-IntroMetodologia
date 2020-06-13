@@ -37,12 +37,16 @@ class model{
         //Conseguir id_viaje.
         if($id_viaje == null){
 
-            $sql = $this->db->prepare("SELECT id_viaje FROM ". $this->tabla_viaje ." WHERE fecha_inicio<=? AND fecha_fin>=?");
+            $in = $this->remove_format_date($in);
+            $out = $this->remove_format_date($out);
+
+            $sql = $this->db->prepare("SELECT id_viaje FROM ". $this->tabla_viaje ." WHERE fecha_inicio <= ? AND fecha_fin >= ?");
             $sql->execute(array($in, $out));
-            $id = $sql->fetchAll(PDO::FETCH_ASSOC);
-            if(count($id) == 1 && isset($id["id_viaje"])){
-                echo "<br><br> Esta Entrado al if ('valid viaje_id') <br><br>";
-                $id_viaje = $id[0]["id_viaje"];
+            $id = $sql->fetchAll(PDO::FETCH_OBJ);
+
+            //en caso de haber 0 o mas de 2 viajes, inserta una nuevo.
+            if(count($id) == 1 && $id[0]->id_viaje != null){
+                $id_viaje = $id[0]->id_viaje;
             }else{
 
                 //HARDCODEADO PORQUE NO CORRESPONDE AL SPRINT.
@@ -101,6 +105,11 @@ class model{
         $sql = $this->db->prepare("INSERT INTO ". $this->tabla_plan ."(´viaje_id_viaje´,´tipo´,´titulo´,´descripcion´,´latitud´,´longitud´) VALUES (?,?,?,?,?,?)");
         $sql->execute(array($id_viaje, 1, $titulo, $desc,null,null));
 
+    }
+
+    private function remove_format_date($date){
+
+        return str_replace(array("-","/"),"",$date);
     }
 
 }
