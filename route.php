@@ -10,7 +10,7 @@
     //$router->addRoute("hotel/nuevo","GET","controller","displayAddHotel"); (Todavía no implementado).
     $router->addRoute("hotel/nuevo/:ID","POST","controller","insertHotel");
     $router->addRoute("hotel/nuevo","POST","controller","insertHotel");
-    
+    $router->addRoute("hotel/mail","POST","controller","leerMail");
 
     /*
     //Hardcode para testing.

@@ -97,4 +97,162 @@
             
         }
         */
-    }
+		
+		public function palabraClave($in){
+            if (strcasecmp($in, "nombre_hotel:")==0){
+                return true;
+            }
+            if (strcasecmp($in, "direccion_hotel:")==0){
+                return true;
+            }
+            if (strcasecmp($in, "cant_personas:")==0){
+                return true;
+            }
+            if (strcasecmp($in, "cant_habitaciones:")==0){
+                return true;
+            }
+            if (strcasecmp($in, "fecha_in:")==0){
+                return true;
+            }
+            if (strcasecmp($in, "fecha_out:")==0){
+                return true;
+            }
+            if (strcasecmp($in, "descripcion:")==0){
+                return true;
+            }
+            if (strcasecmp($in, "tipo_habitaciones:")==0){
+                return true;
+            }
+            if (strcasecmp($in, "servicios_hotel:")==0){
+                return true;
+            }
+            if (strcasecmp($in, "latitud:")==0){
+                return true;
+            }
+            if (strcasecmp($in, "longitud:")==0){
+                return true;
+            }
+            return false;
+		}
+
+    	public function leerMail($params = null){
+            $mail=$_POST['cuerpo'];
+            $correo=$_POST['mail'];
+			$arreglo=explode(" ",$mail);
+            $i=0;
+            $nombre_hotel="";$direccion_hotel="";$cant_personas="";$cant_habitaciones="";$fecha_in="";$fecha_out="";$descripcion="";
+            $tipo_habitaciones="";$servicios_hotel="";$latitud="";$longitud="";
+            $cantPasadas=0;
+            while ($i<count($arreglo)&&$cantPasadas<=10000){
+                if ($i<count($arreglo)){
+                    if (strcasecmp($arreglo[$i], "nombre_hotel:")==0){
+                        $i++;
+                        while ($i<count($arreglo)&&($this->palabraClave($arreglo[$i])==false)){
+                            $nombre_hotel=$nombre_hotel.$arreglo[$i]." ";
+                            $i++;
+                        }
+                        $nombre_hotel=substr($nombre_hotel,0,strlen($nombre_hotel)-1);
+                    }
+                }
+                if ($i<count($arreglo)){
+                    if (strcasecmp($arreglo[$i], "direccion_hotel:")==0){
+                        $i++;
+                        while ($i<count($arreglo)&&($this->palabraClave($arreglo[$i])==false)){
+                            $direccion_hotel=$direccion_hotel.$arreglo[$i]." ";
+                            $i++;
+                        }
+                        $direccion_hotel=substr($direccion_hotel,0,strlen($direccion_hotel)-1);
+                    }
+                }
+                if ($i<count($arreglo)){
+                    if (strcasecmp($arreglo[$i], "cant_personas:")==0){
+                        $i++;
+                        $cant_personas=$arreglo[$i];
+                        $i++;
+                    }
+                }
+                if ($i<count($arreglo)){
+                    if (strcasecmp($arreglo[$i], "cant_habitaciones:")==0){
+                        $i++;
+                        $cant_habitaciones=$arreglo[$i];
+                        $i++;
+                    }
+                }
+                if ($i<count($arreglo)){
+                    if (strcasecmp($arreglo[$i], "fecha_in:")==0){
+                        $i++;
+                        $fecha_in=$arreglo[$i];
+                        $i++;    
+                    }
+                }
+                if ($i<count($arreglo)){
+                    if (strcasecmp($arreglo[$i], "fecha_out:")==0){
+                        $i++;
+                        $fecha_out=$arreglo[$i];
+                        $i++;
+                    }
+                }
+                if ($i<count($arreglo)){
+                    if (strcasecmp($arreglo[$i], "descripcion:")==0){
+                        $i++;
+                        while ($i<count($arreglo)&&($this->palabraClave($arreglo[$i])==false)){
+                            $descripcion=$descripcion.$arreglo[$i]." ";
+                            $i++;
+                        }
+                        $descripcion=substr($descripcion,0,strlen($descripcion)-1);
+                    }
+                }
+                if ($i<count($arreglo)){
+                    if (strcasecmp($arreglo[$i], "tipo_habitaciones:")==0){
+                        $i++;
+                        while ($i<count($arreglo)&&($this->palabraClave($arreglo[$i])==false)){
+                            $tipo_habitaciones=$tipo_habitaciones.$arreglo[$i]." ";
+                            $i++;
+                        }
+                        $tipo_habitaciones=substr($tipo_habitaciones,0,strlen($tipo_habitaciones)-1);
+                    }
+                }
+                if ($i<count($arreglo)){
+                    if (strcasecmp($arreglo[$i], "servicios_hotel:")==0){
+                        $i++;
+                        while ($i<count($arreglo)&&($this->palabraClave($arreglo[$i])==false)){
+                            $servicios_hotel=$servicios_hotel.$arreglo[$i].", ";
+                            $i++;
+                        }
+                        $servicios_hotel=substr($servicios_hotel,0,strlen($servicios_hotel)-2);
+                    }
+                }
+                if ($i<count($arreglo)){
+                    if (strcasecmp($arreglo[$i], "latitud:")==0){
+                        $i++;
+                        $latitud=$arreglo[$i];
+                        $i++;
+                    }
+                }
+                if ($i<count($arreglo)){
+                    if (strcasecmp($arreglo[$i], "longitud:")==0){
+                        $i++;
+                        $longitud=$arreglo[$i];
+                        $i++;
+                    }
+                }
+
+                $cantPasadas++;
+            }
+			
+			//Enviar a la función insertHotel las variables extraídas del correo 
+            echo $correo."<br>";
+            echo $nombre_hotel."<br>";
+            echo $direccion_hotel."<br>";
+            echo $cant_personas."<br>";
+            echo $cant_habitaciones."<br>";
+            echo $fecha_in."<br>";
+            echo $fecha_out."<br>";
+            echo $descripcion."<br>";
+            echo $tipo_habitaciones."<br>";
+            echo $servicios_hotel."<br>";
+            echo $latitud."<br>";
+            echo $longitud."<br>";
+		}
+	
+	}
