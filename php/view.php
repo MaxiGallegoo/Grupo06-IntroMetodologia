@@ -55,6 +55,9 @@
 			$this->plantilla->display("map.tpl");
 		}
 
+		public function addHotel(){
+			$this->plantilla->display("templates/add_hotel.tpl");
+		}
 
     }
     
