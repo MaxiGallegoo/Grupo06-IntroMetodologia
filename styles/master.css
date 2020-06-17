@@ -1,0 +1,88 @@
+body{
+    background-image: linear-gradient(blue , rgb(0,0,200));
+    color:rgb(0,0,120);
+    font-size: 20px;
+    width: 348px;
+    height: 620px;
+    padding: 1%;
+    padding-top: 0;
+    padding-left: 0;
+    font-family: sans-serif;
+    text-align: center;
+}
+div{
+    border-radius: 20px;
+}
+
+label, input{
+    width: 96%;
+    float: left;
+}
+input, select{
+    background-color: inherit;
+    border: none;
+    border-bottom: rgb(70,70,255) solid 2px;
+    margin: 0 0 30px 0;
+    padding: 2%;
+    color: #0000C8;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+select{
+    margin-top: 3px;
+    width: 100%;
+}
+::placeholder{
+    color: rgb(27, 27, 43);
+    font-size: 14px;
+}
+label{
+    font-size: 12px;
+    text-align: left;
+    font-weight: 600;
+}
+.content{
+    background-image: linear-gradient(#bedcff,#A7CBE8);
+    position: relative;
+    padding: 2%;
+    width: 95%;
+    height: 98%;
+    margin: 2%;
+    margin-left: 0;
+    overflow-y: scroll;
+}
+
+::-webkit-scrollbar {display: none;}
+
+#add_viaje_icono, #add_plan_icono{
+    float: left;
+    width: 60px;
+    height: auto;
+    margin: 5% 0 15% 8%;
+
+}
+#title{
+    font-size: 22px;
+    margin: 21px 15px 5px 5px;
+    width: 60%;
+    float: right;
+}
+
+.boton_finalizar{
+    float: left;
+    width: 40%;
+    margin: 1% 5%;
+    margin-top: 15%;
+    height: auto;
+    background-color: #0000C8;
+}
+.boton_finalizar p{
+    margin: 10%;
+    width: 80%;
+    color:white;
+    font-size: 14px;
+    font-weight: bold;
+}
+.hidden{
+    display: none;
+}
