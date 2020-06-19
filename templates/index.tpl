@@ -12,5 +12,6 @@
 	</br><a href="{BASE_URL}/mapa/2">Ver viaje 2</a>
     </br><a href="{BASE_URL}/estadistica/1">Estadistica global 1</a>
 	</br><a href="{BASE_URL}/estadistica/2">Estadistica global 2</a>
+    </br><a href="{BASE_URL}/hotel/nuevo">Agregar reserva de hotel</a>
 </body>
 </html>

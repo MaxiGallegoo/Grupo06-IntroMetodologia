@@ -18,7 +18,7 @@
 		public function index(){
             $this->view->displayIndex();
             
-		}
+        }
 		public function verMapa($params = null){
 			$id=$params[":ID"];
     		$this->view->verMapa($id);
@@ -27,6 +27,9 @@
         public function verEstadistica($params = null){
 			$id=$params[":ID"];
             $this->view->verEstadisticas($id);
+        }
+        public function displayAddHotel(){
+            $this->view->addHotel();
         }
         
 		public function InsertEstadistica(){
