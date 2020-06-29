@@ -1,4 +1,5 @@
 <?php
+
     require_once "php/model.php";
     require_once "php/view.php";
     require_once "php/isset_helper.php";
@@ -44,7 +45,7 @@
 
     //Recive id_viaje como parámetro en caso que el insert se realice desde un viaje ya creado, pero también funciona llamando la función sin parámetros.
     //Los valores que pueden ser 'Null' generan error en el validData(), habría que establecer un 'equivalente' a null.
-        public function insertHotel($id_viaje = null){
+        public function insertHotel($id_viaje = null, $arr_mail = null){
 
             /*
             
@@ -59,9 +60,16 @@
 
             //Ininializa en 0 para que, en caso que no sea modificado, falle el if;
             $id_hotel = 0;
+
+            // [IMPORTANTE] Ignoramos temporalmente a que usuario se agregan los planes porque no corresponde a este sprint.
+
             // isset_helpet->validData($arr , $keys);
+            if($arr_mail !=null && validData($arr_mail , array("titulo","nombre_hotel","direccion_hotel","cant_personas","cant_habitaciones","fecha_in","fecha_out","descripcion","tipo_habitaciones","servicios_hotel"))){
+                $id_hotel = $this->model->add_hotel($arr_mail['titulo'],$arr_mail['nombre_hotel'],$arr_mail['direccion_hotel'],$arr_mail['cant_personas'],$arr_mail['cant_habitaciones'],$arr_mail['fecha_in'],$arr_mail['fecha_out'], $id_viaje ,$arr_mail['descripcion'],$arr_mail['tipo_habitaciones'],$arr_mail['servicios_hotel']);
+            }
+            
             // [IMPORTANTE] Las keys dentro del array deben ser iguales a los nombres de los inputs del .tpl.
-            if(validData(null /* $_POST */ , array("titulo","nombre_hotel","direccion_hotel","cant_personas","cant_habitaciones","fecha_in","fecha_out","descripcion","tipo_habitaciones","servicios_hotel"))){
+            elseif(validData(null /* $_POST */ , array("titulo","nombre_hotel","direccion_hotel","cant_personas","cant_habitaciones","fecha_in","fecha_out","descripcion","tipo_habitaciones","servicios_hotel"))){
                 
                 $id_hotel = $this->model->add_hotel($_POST['titulo'],$_POST['nombre_hotel'],$_POST['direccion_hotel'],$_POST['cant_personas'],$_POST['cant_habitaciones'],$_POST['fecha_in'],$_POST['fecha_out'], $id_viaje ,$_POST['descripcion'],$_POST['tipo_habitaciones'],$_POST['servicios_hotel']);
             }else{
@@ -80,7 +88,7 @@
             }
             */
 
-
+            return $id_hotel;
             
         }
 
@@ -140,7 +148,7 @@
 
     	public function leerMail($params = null){
             $mail=$_POST['cuerpo'];
-            $correo=$_POST['mail'];
+            $correo=$_POST['correo'];
 			$arreglo=explode(" ",$mail);
             $i=0;
             $nombre_hotel="";$direccion_hotel="";$cant_personas="";$cant_habitaciones="";$fecha_in="";$fecha_out="";$descripcion="";
@@ -244,18 +252,30 @@
             }
 			
 			//Enviar a la función insertHotel las variables extraídas del correo 
-            echo $correo."<br>";
-            echo $nombre_hotel."<br>";
-            echo $direccion_hotel."<br>";
-            echo $cant_personas."<br>";
-            echo $cant_habitaciones."<br>";
-            echo $fecha_in."<br>";
-            echo $fecha_out."<br>";
-            echo $descripcion."<br>";
-            echo $tipo_habitaciones."<br>";
-            echo $servicios_hotel."<br>";
-            echo $latitud."<br>";
-            echo $longitud."<br>";
-		}
-	
+            
+            //echo $correo."<br>"; (Ignorado temporalmente porque no pertenece a nuestro sprint)
+            
+            $titulo = "estadía en ".$nombre_hotel;
+            $descripcion = "Estadía en hotel ".$nombre_hotel." para ".$cant_personas." desde ".$fecha_in." hasta ".$fecha_out;
+
+            $data = array("titulo" => $titulo, "nombre_hotel" => $nombre_hotel, "direccion_hotel" => $direccion_hotel,
+            "cant_personas" => $cant_personas, "cant_habitaciones" => $cant_habitaciones,
+            "fecha_in" => $fecha_in, "fecha_out" => $fecha_out, "descripcion" => $descripcion, 
+            "tipo_habitaciones" => $tipo_habitaciones, "servicios_hotel" => $servicios_hotel);
+
+            //echo $titulo."<br>"; (Titulo no se obtendría desde mail).
+            //echo $nombre_hotel."<br>";
+            //echo $direccion_hotel."<br>";
+            //echo $cant_personas."<br>";
+            //echo $cant_habitaciones."<br>";
+            //echo $fecha_in."<br>";
+            //echo $fecha_out."<br>";
+            //echo $descripcion."<br>"; (Descripción no se obtendría desde mail).
+            //echo $tipo_habitaciones."<br>";
+            //echo $servicios_hotel."<br>";
+            //echo $latitud."<br>"; (Se obtendría buscando el hotel en un mapa a partir de su direccion).
+            //echo $longitud."<br>"; (Se obtendría buscando el hotel en un mapa a partir de su direccion).
+
+            $response = $this->insertHotel( null, $data );
+        }
 	}

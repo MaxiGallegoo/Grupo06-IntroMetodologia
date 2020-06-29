@@ -6,13 +6,13 @@
         if($arr==null){
             foreach($keys as $k){
                 if( !isset($_POST[$k]) || $_POST[$k]=='' ){
-                    return false;
+                    return "false";
                 }
             }
         }else{
             foreach($keys as $k){
                 if( !isset($arr[$k]) || $arr[$k]=='' ){
-                    return false;
+                    return "false";
                 }
             }
         }

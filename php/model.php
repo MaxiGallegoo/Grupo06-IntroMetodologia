@@ -67,7 +67,7 @@ class model{
         }
 
         //Cargo el hotel en planes generales.
-        $sql = $this->db->prepare("INSERT INTO ". $this->tabla_plan ."(id_viaje,tipo,titulo,descripcion) VALUES (?,?,?,?)");
+        $sql = $this->db->prepare("INSERT INTO ".$this->tabla_plan."(id_viaje , tipo , titulo , descripcion) VALUES (?,?,?,?)");
         $sql->execute(array($id_viaje, 1, $titulo, $descripcion));
 
         //Recupero id de plan (General) para usarlo como PK de plan_hotel.
