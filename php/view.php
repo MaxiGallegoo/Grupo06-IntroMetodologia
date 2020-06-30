@@ -15,7 +15,7 @@
 			}else{
 				$this->plantilla->assign('nuevos_hoteles',0);
 			}
-			if($nuevos_hoteles && count($viajes)!=0){
+			if($viajes && count($viajes)!=0){
 				$this->plantilla->assign('viajes',$viajes);
 			}else{
 				$this->plantilla->assign('viajes',0);

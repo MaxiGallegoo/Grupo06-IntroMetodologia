@@ -113,12 +113,12 @@ class model{
     }
 
     public function getConfirmacionHotel(){
-        $sql = $this->db->prepare("SELECT nombre_hotel FROM ".$this->tabla_hotel." WHERE informado=0");
+        $sql = $this->db->prepare("SELECT nombre_hotel FROM ".$this->tabla_hotel." WHERE informado = 0");
         $sql->execute();
         $data = $sql->fetchAll(PDO::FETCH_OBJ);
-        
+
         if($data){
-            $sql = $this->db->prepare("UPDATE ".$this->tabla_hotel." PUT informado=1 WHERE informado=0");
+            $sql = $this->db->prepare("UPDATE ".$this->tabla_hotel." SET `informado`= 1 WHERE informado = 0");
             $sql->execute();
         }
         
