@@ -126,7 +126,7 @@ class model{
 
     }
     public function getViajesBase(){
-        $sql = $this->db->prepare("SELECT nombre, fecha_inicio, fecha_fin FROM ".$this->tabla_viaje);
+        $sql = $this->db->prepare("SELECT nombre, fecha_inicio, fecha_fin, id_viaje FROM ".$this->tabla_viaje);
         $sql->execute();
         return $sql->fetchAll(PDO::FETCH_OBJ);
     }

@@ -67,7 +67,11 @@
 			$this->plantilla->display("map.tpl");
 		}
 
-		public function addHotel(){
+		public function addHotel($viajes=null){
+			if(!$viajes){
+				$viajes = 0;
+			}
+			$this->plantilla->assign('viajes',$viajes);
 			$this->plantilla->display("templates/add_hotel.tpl");
 		}
 

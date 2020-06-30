@@ -33,7 +33,8 @@
             $this->view->verEstadisticas($id);
         }
         public function displayAddHotel(){
-            $this->view->addHotel();
+            $viajes = $this->model->getViajesBase();
+            $this->view->addHotel($viajes);
         }
         
 		public function InsertEstadistica(){
