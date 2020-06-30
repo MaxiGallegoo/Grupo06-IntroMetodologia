@@ -108,7 +108,7 @@
 
         </div>
         <div id="historial_viajes">
-            <h2>Viajes realizados</h2>
+            <h2>Estadisticas</h2>
         </div>
         <div class="sub_content" id="menu_usuario">
 
