@@ -8,7 +8,19 @@
             $this->plantilla = new Smarty();
         }
 
-        public function displayIndex(){
+        public function displayIndex($viajes=null, $nuevos_hoteles=null){
+			
+			if($nuevos_hoteles && count($nuevos_hoteles)!=0){
+				$this->plantilla->assign('nuevos_hoteles',$nuevos_hoteles);
+			}else{
+				$this->plantilla->assign('nuevos_hoteles',0);
+			}
+			if($nuevos_hoteles && count($viajes)!=0){
+				$this->plantilla->assign('viajes',$viajes);
+			}else{
+				$this->plantilla->assign('viajes',0);
+			}
+
             $this->plantilla->display("templates/index.tpl");
         }
 
@@ -55,6 +67,9 @@
 			$this->plantilla->display("map.tpl");
 		}
 
+		public function addHotel(){
+			$this->plantilla->display("templates/add_hotel.tpl");
+		}
 
     }
     
