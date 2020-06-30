@@ -120,33 +120,34 @@
     <div class="viajes" id="viajes_db">
         {if $viajes != 0}
             <h1 class="viajes_title">Futuros viajes</h1>
+            {foreach from=$viajes item=$v}
+                <div class="viaje_individual">    
+                    <h2>{$v->nombre}</h2>
+                    <p>Desde {$v->fecha_inicio} hasta {$v->fecha_fin}</p>
+                    <!--Debería traer los titulos de los planes y meterlos en el mismo div-->
+                </div>
+            {/foreach}
         {else}
             <h1 class="viajes_title">No hay viajes planeados</h1>
         {/if}
-        {foreach from=$viajes item=$v}
-            <div class="viaje_individual">    
-                <h2>{$v->nombre}</h2>
-                <p>Desde {$v->fecha_inicio} hasta {$v->fecha_fin}</p>
-                <!--Debería traer los titulos de los planes y meterlos en el mismo div-->
-            </div>
-        {/foreach}
     </div>
 
-    {if $nuevos_hoteles!=0}
+    {if $nuevos_hoteles==0}
+    <div class="hidden" id="notificaciones">
+    {else}
     <div id="notificaciones">
-
+    {/if}
         <img src="img/index/cerrar.png" id="notificaciones_cerrar" alt="">
 
         {if sizeof($nuevos_hoteles) == 1}
-        <h2 id="h2_notif">El siguiente hotel se agreg&oacute correctamente:</h2>
+        <h2 id="h2_notif">La siguiente reserva de hotel se registr&oacute correctamente:</h2>
         {else}
-        <h2 id="h2_notif">Los siguientes hoteles se agregaron correctamente:</h2>
+        <h2 id="h2_notif">Las siguientes reservas de hotel se registraron correctamente:</h2>
         {/if}
         {foreach from=$nuevos_hoteles item=$h}
             <p class="p_notif">Reserva en hotel "{$h->nombre_hotel}"</p>
         {/foreach}
     </div>
-    {/if}
 
     <script type="text/javascript" src="js/behav.js"></script>
 
