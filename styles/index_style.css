@@ -1,0 +1,294 @@
+
+body{
+    
+    background-image: linear-gradient(blue , rgb(0,0,200));
+    height: auto;
+    padding: 1%;
+    padding-top: 0;
+    padding-left: 0;
+    font-family: sans-serif;
+}
+div{
+    
+    width: 101%;
+    border-radius: 20px;
+    margin: 0;
+}
+.content{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 360px;
+    border-radius: 0;
+    margin-bottom: 2%;
+    height: 8%;
+    background-color:#A7CBE8 ;
+    float: left;
+    clear: both;
+}
+.sub_content{
+    z-index: 0;
+    width: 20%;
+    height: 100%;
+    overflow: hidden;
+    background-color:#A7CBE8 ;
+}
+.sub_content_image{
+    margin: 5% 20%;
+    width: 60%;
+    height: auto;
+    color: #004EFF;
+}
+#menu_usuario{
+    border-radius: 0;
+    float: right;
+    border-left: solid blue 1px;
+
+}
+#agregar_viaje{
+    border-radius: 0;
+    float: left;
+    border-right: solid blue 1px;
+}
+#historial_viajes{
+    justify-content: center;
+    color: rgb(0,0,120);
+    padding: 0;
+    padding-left: 12px;
+    width: 59%;
+    float: left;
+    text-align: center;
+    font-family: sans-serif;
+    height: 100%;
+    width: auto;
+    background-color:#A7CBE8 ;
+}
+#historial_viajes h2{
+    position: fixed;
+    bottom: 581px;
+    font-size: 24px;
+}
+.viajes{
+    height: auto;
+    margin-top: 55px;
+    margin-bottom: 6px;
+    min-height: 92%;
+    background-image: linear-gradient(to top,#12EBE0,#A7CBE8);
+    float: left;
+    text-align: center;
+    font-family: sans-serif;
+}
+.viajes_title{
+    color: rgb(0,0,120);
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.viaje_individual{
+    color: white;
+    margin: 3%;
+    width: 92%;
+    height: auto;
+    padding: 1px 5px;
+    border-radius: 30px;
+    background-image: linear-gradient(#004EFF,#0039ee);
+}
+
+.hidden_menu_option{
+    border-radius: 0px;
+    width: 100%;
+    height: 50%;
+    position: fixed;
+    left: 0;
+}
+.top{
+    top: 0;
+    border-radius: 0;
+    border-bottom: solid blue 2px;
+}
+.bot{
+    bottom: 0;
+}
+#hidden-new-menu,#hidden-user-menu-logged,#hidden-user-menu-unlogged{
+    color: #000078;
+    border-radius: 0;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #A7CBE8;
+}
+#user_menu_cerrar_unlogged,#new_menu_cerrar,#user_menu_cerrar_logged{
+    z-index: 2;
+    width: 35px;
+    height: auto;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+.hidden{
+    display: none;
+}
+
+.hidden_menu_icon{
+    width: 25%;
+    position: relative;
+    top: 10%;
+    left: 10%;
+    height: auto;
+    float: left;
+}
+.hidden_menu_title {
+    position: relative;
+    width: 50%;
+    top: 10%;
+    right: 10%;
+    height: auto;
+    float: right;
+}
+.hidden_menu_option_desc{
+    border-radius: 0;
+    position: relative;
+    clear: both;
+    width: 80%;
+    text-align: center;
+    top: 15%;
+    left: 10%;
+    overflow: hidden;
+}
+.hidden_overflow{
+    overflow: hidden;
+}
+
+
+
+
+
+.viaje_ind_pag_img{
+    float: left;
+    width: 20%;
+    height: auto;
+    margin: 2% 0 2% 5%;
+}
+.viaje_ind_pag_txt{
+    color: #000078;
+    text-align: left;
+    float: right;
+    width: 62%;
+    margin: 7% 2%;
+    vertical-align: top;
+
+}
+.viaje_ind_pag_plan{
+    position: relative;
+    padding: 0;
+    width: 98%;
+    height: 3%;
+    overflow: hidden;
+
+}
+.vuelo_forzar_mas_alto{
+    top: -200px;
+}
+
+
+table{
+    color: #000078;
+    width: 98.4%;
+    margin: 1%;
+    background-color: #000078;
+    border-radius: 20px;
+    border: solid #000078 1px;
+}
+tr:nth-child(odd){
+    background-color: #A7CBE8;
+    color: #000078;
+}
+tr{
+    border-radius: 10px;
+    width: 98%;
+    background-color: #0000F8;
+    color: #12EBE0;
+    margin: 2px ;
+}
+td{
+    width: 49.5%;
+}
+tr:first-child td:first-child{
+    border-top-left-radius: 20px;
+}
+tr:first-child td:last-child{
+    border-top-right-radius: 20px;
+}
+tr:last-child td:first-child{
+    border-bottom-left-radius: 20px;
+}
+tr:last-child td:last-child{
+    border-bottom-right-radius: 20px;
+}
+
+
+
+.hidden-user-menu-form label{
+    font-size: 10px;
+    margin-top: 4px;
+    text-align: left;
+    float: left;
+    width: 98%;
+
+}
+.hidden-user-menu-form input{
+    border-radius: 0;
+    padding: 4px;
+    width: 98%;
+    background-color: #A7CBE8;
+    color: #000078;
+    border: none;
+    border-bottom: solid #000078 1px;
+}
+#ingresar,#registrarse{
+    margin-top: 24px;
+    padding: 3px;
+    font-size: 20px;
+    border: solid 2px #000078;
+    border-radius: 10px;
+    width: auto;
+    text-align: center;
+}
+#ingresar{
+    margin-top: 64px;
+}
+#h2_notif{
+    margin: 5%;
+    margin-right: 10%;
+    text-align: center;
+}
+.p_notif{
+    margin: 5%;
+    text-align: center;
+}
+#notificaciones{
+    z-index: 4;
+    
+    color: #000078;
+    border-radius: 15;
+    border: solid black 5px;
+    z-index: 1;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    width: 70%;
+    height: auto;
+    overflow: visible; 
+    background-color: #A7CBE8;
+}
+#notificaciones_cerrar{
+    z-index: 5;
+    width: 18px;
+    height: auto;
+    position: fixed;
+    top: 25px;
+    right: 25px;
+}
