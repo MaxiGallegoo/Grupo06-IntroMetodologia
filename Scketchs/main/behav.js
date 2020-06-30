@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded",function(){
         mostrar_hidden_menu(false,0);
         logged = true;
     });
+    document.querySelector("#notificaciones_cerrar").addEventListener("click",function(){mostrar_hidden_menu(false,2)});
     document.querySelector("#user_menu_cerrar_unlogged").addEventListener("click",function(){mostrar_hidden_menu(false,0)});
 
     document.querySelector("#menu_usuario").addEventListener("click", function(){mostrar_hidden_menu(true,0)});
@@ -41,6 +42,9 @@ document.addEventListener("DOMContentLoaded",function(){
             break;
             case 1: menu = document.querySelector("#hidden-new-menu");
             break;
+
+            case 2:menu = document.querySelector("#notificaciones");
+            break;
         }
         console.log("mostrar_hidden_menu --- 1");
         console.log(menu);
@@ -62,5 +66,6 @@ document.addEventListener("DOMContentLoaded",function(){
     logged=false;
     mostrar_hidden_menu(false,0);
     mostrar_hidden_menu(false,1);
+    mostrar_hidden_menu(false,2);
 
 });
