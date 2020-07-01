@@ -5,14 +5,14 @@
     define("BASE_URL", 'http://'.$_SERVER["SERVER_NAME"].':'.$_SERVER["SERVER_PORT"].dirname($_SERVER["PHP_SELF"]));
 	
     $router = new Router();
-    $router->addRoute("mapa/:ID","GET","controller","verMapa");
 
     $router->addRoute("hotel/nuevo","GET","controller","displayAddHotel");
     $router->addRoute("hotel/nuevo/:ID","POST","controller","insertHotel");
     $router->addRoute("hotel/nuevo","POST","controller","insertHotel");
     $router->addRoute("hotel/mail","POST","controller","leerMail");
-    $router->addRoute("estadistica/:ID","GET","controller","verEstadistica");
+    $router->addRoute("estadistica/","GET","controller","verEstadistica");
     $router->addRoute("mapa/:ID","GET","controller","verMapa");
+    $router->addRoute("estadisticaind/","GET","controller","verEstadisticaind");
     /*
     //Hardcode para testing.
     $router->addRoute("hardcode_testing_addHotel","GET","controller","testingModel_addHotel");

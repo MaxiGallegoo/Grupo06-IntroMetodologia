@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded",function(){
     document.querySelector("#agregar_viaje").addEventListener("click", function(){mostrar_hidden_menu(true,1)});
     document.querySelector("#new_menu_cerrar").addEventListener("click",function(){mostrar_hidden_menu(false,1)});
     
-    document.querySelector("#historial_viajes").addEventListener("click",function(){location.replace(urlbase+"/estadistica/7")});
+    document.querySelector("#historial_viajes").addEventListener("click",function(){location.replace(urlbase+"/estadistica")});
     
     //document.querySelector("#btn_cancelar").addEventListener("click", go_index);
     

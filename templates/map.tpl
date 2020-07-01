@@ -18,6 +18,7 @@
 <body>
 	<div id="map" ></div>
 	<a href="{BASE_URL}">VOLVER</a>
+	<a href="{BASE_URL}/estadisticaind">ESTADÍSTICAS</a>
 	<div>
 		<ul id="data">
 		</ul>

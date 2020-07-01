@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/index_style.css">
 </head>
 <body>
-    <p style="visibility:hidden;" id="url_base">{BASE_URL}</p>;
+    <p style="display:none;" id="url_base">{BASE_URL}</p>
 
     <div id="hidden-new-menu">
         <img src="img/index/cerrar.png" id="new_menu_cerrar" alt="">

@@ -35,7 +35,7 @@ class model{
     public function add_hotel($titulo, $nombre_hotel, $direccion, $cant_personas, $cant_habitaciones, $in, $out, $id_viaje = null, $descripcion = null, $tipo_habitaciones = null, $servicios_hotel = null, $lat = null, $long= null){
 
         //Conseguir id_viaje.
-        if($id_viaje == null){
+        if($id_viaje == -1||$id_viaje ==null){
 
             $in = $this->remove_format_date($in);
             $out = $this->remove_format_date($out);

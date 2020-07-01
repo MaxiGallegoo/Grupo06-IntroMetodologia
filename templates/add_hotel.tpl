@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../styles/master.css">
 </head>
 <body>
-    <p style="visibility:hidden;" id="url_base">{BASE_URL}</p>;
+    <p style="display:none;" id="url_base">{BASE_URL}</p>
     <div class="content">
         <h2 id="title">Agregar un nuevo plan</h2>
         <img src="../images/screen.png">

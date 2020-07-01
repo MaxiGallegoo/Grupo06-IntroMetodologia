@@ -7,7 +7,9 @@
         <link rel="stylesheet" href="styles/index_style.css">
 </head>
 <body>
-    <h2>Procesando los datos</h2>
-    <a href="{BASE_URL}">VOLVER A INICIO</a>
+
+    <script>
+        location.replace("{BASE_URL}");
+    </script>
 </body>
 </html>

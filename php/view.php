@@ -29,11 +29,18 @@
             $this->plantilla->display("templates/estadisticas_globales.tpl");
 		}
 		
-		public function mostrar_estadistica($Estadistica){
+		public function mostrar_estadistica(){
 			//var_dump($Estadistica);
-            $this->plantilla->assign('Estadistica',$Estadistica);
-            $this->plantilla->display("templates/estadisticas.tpl");
+           // $this->plantilla->assign('Estadistica',$Estadistica);
+            $this->plantilla->display("templates/estadisticas_globales.tpl");
 		}
+
+		public function mostrar_estadisticaind(){
+			//var_dump($Estadistica);
+           // $this->plantilla->assign('Estadistica',$Estadistica);
+            $this->plantilla->display("templates/estadistica.tpl");
+		}
+
 		// public function verEstadisticas($id){
 		// 	if($id==1){
 		// 		$this->plantilla->assign('Estadistica',$Estadistica);

@@ -30,9 +30,15 @@
         }
         
         public function verEstadistica($params = null){
-            $id=$params[":ID"];
-            $Estadisticas=$this->model->get_estadisticas_viaje($id);
-            $this->view->mostrar_estadistica($Estadisticas);
+            //$id=$params[":ID"];
+            //$Estadisticas=$this->model->get_estadisticas_viaje($id);
+            $this->view->mostrar_estadistica();
+        }
+
+        public function verEstadisticaind($params = null){
+            //$id=$params[":ID"];
+            //$Estadisticas=$this->model->get_estadisticas_viaje($id);
+            $this->view->mostrar_estadisticaind();
         }
         public function displayAddHotel(){
             $viajes = $this->model->getViajesBase();
