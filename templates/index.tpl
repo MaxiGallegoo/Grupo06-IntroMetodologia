@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="styles/index_style.css">
 </head>
 <body>
+    <p style="visibility:hidden;" id="url_base">{BASE_URL}</p>;
 
     <div id="hidden-new-menu">
         <img src="img/index/cerrar.png" id="new_menu_cerrar" alt="">
@@ -23,9 +24,9 @@
             </div>
 
         </div>
-        <div class="hidden_menu_option bot">
+        <div class="hidden_menu_option bot" id="js-new_hotel">
 
-            <img src="img/index/nuevo_plan.png" id="js-new_hotel" class="hidden_menu_icon" alt="">
+            <img src="img/index/nuevo_plan.png" class="hidden_menu_icon" alt="">
             <div class="hidden_menu_title">
                 <h2>Cargar un nuevo plan</h2>
             </div>
@@ -121,8 +122,8 @@
         {if $viajes != 0}
             <h1 class="viajes_title">Futuros viajes</h1>
             {foreach from=$viajes item=$v}
-                <div class="viaje_individual">    
-                    <h2>{$v->nombre}</h2>
+                <div class="viaje_individual" >    
+                    <a href="{BASE_URL}/mapa/{$v->id_viaje}"><h2>{$v->nombre}</h2></a>
                     <p>Desde {$v->fecha_inicio} hasta {$v->fecha_fin}</p>
                     <!--Debería traer los titulos de los planes y meterlos en el mismo div-->
                 </div>

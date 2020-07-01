@@ -19,9 +19,9 @@ class model{
 
     //GetEstadísticas() de un viaje específico.
     public function get_estadisticas_viaje($id_viaje){
-        $sql = $this->db->prepare("SELECT * FROM ".$this->tabla_estadisticas." t WHERE t.viaje_id_viaje = ?");
+        $sql = $this->db->prepare("SELECT * FROM ".$this->tabla_estadisticas." t WHERE id_viaje = ?");
         $sql->execute(array($id_viaje));
-        return $sql->fetch(PDO::FETCH_ASSOC);
+        return $sql->fetch(PDO::FETCH_OBJ);
     }
 
     //GetEstadísticas() de todos los viajes.
@@ -32,7 +32,7 @@ class model{
     }
 
     //Los valores que pueden ser 'Null' pueden generar errores si no son seteados específicamente como 'Null' en la llamada a la función.
-    public function add_hotel($titulo, $nombre_hotel, $direccion, $cant_personas, $cant_habitaciones, $in, $out, $id_viaje = null, $descripcion = null, $tipo_habitaciones = null, $servicios_hotel = null){
+    public function add_hotel($titulo, $nombre_hotel, $direccion, $cant_personas, $cant_habitaciones, $in, $out, $id_viaje = null, $descripcion = null, $tipo_habitaciones = null, $servicios_hotel = null, $lat = null, $long= null){
 
         //Conseguir id_viaje.
         if($id_viaje == null){
@@ -67,8 +67,8 @@ class model{
         }
 
         //Cargo el hotel en planes generales.
-        $sql = $this->db->prepare("INSERT INTO ".$this->tabla_plan."(id_viaje , tipo , titulo , descripcion) VALUES (?,?,?,?)");
-        $sql->execute(array($id_viaje, 1, $titulo, $descripcion));
+        $sql = $this->db->prepare("INSERT INTO ".$this->tabla_plan."(id_viaje , tipo , titulo , descripcion, latitud, longitud) VALUES (?,?,?,?,?,?)");
+        $sql->execute(array($id_viaje, 1, $titulo, $descripcion, $lat, $long));
 
         //Recupero id de plan (General) para usarlo como PK de plan_hotel.
         $id_plan = $this->db->lastInsertId();
@@ -123,12 +123,15 @@ class model{
         }
         
         return $data;
-
     }
     public function getViajesBase(){
         $sql = $this->db->prepare("SELECT nombre, fecha_inicio, fecha_fin, id_viaje FROM ".$this->tabla_viaje);
         $sql->execute();
         return $sql->fetchAll(PDO::FETCH_OBJ);
     }
-
+    public function getCoordenadasViaje($id_viaje){
+        $sql = $this->db->prepare("SELECT latitud, longitud, titulo, descripcion FROM ".$this->tabla_plan." WHERE id_viaje=? and tipo!=0");
+        $sql->execute(array($id_viaje));
+        return $sql->fetchAll(PDO::FETCH_OBJ);
+    }
 }

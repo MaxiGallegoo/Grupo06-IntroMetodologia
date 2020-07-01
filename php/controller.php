@@ -24,13 +24,15 @@
         }
 
 		public function verMapa($params = null){
-			$id=$params[":ID"];
-    		$this->view->verMapa($id);
+            $id=$params[":ID"];
+            $planes=$this->model->getCoordenadasViaje($id);
+    		$this->view->verMapa($planes);
         }
         
         public function verEstadistica($params = null){
-			$id=$params[":ID"];
-            $this->view->verEstadisticas($id);
+            $id=$params[":ID"];
+            $Estadisticas=$this->model->get_estadisticas_viaje($id);
+            $this->view->mostrar_estadistica($Estadisticas);
         }
         public function displayAddHotel(){
             $viajes = $this->model->getViajesBase();
@@ -73,14 +75,24 @@
             }
             
             // [IMPORTANTE] Las keys dentro del array deben ser iguales a los nombres de los inputs del .tpl.
-            elseif(validData(null /* $_POST */ , array("titulo","nombre_hotel","direccion_hotel","cant_personas","cant_habitaciones","fecha_in","fecha_out","descripcion","tipo_habitaciones","servicios_hotel"))){
-                
-                $id_hotel = $this->model->add_hotel($_POST['titulo'],$_POST['nombre_hotel'],$_POST['direccion_hotel'],$_POST['cant_personas'],$_POST['cant_habitaciones'],$_POST['fecha_in'],$_POST['fecha_out'], $id_viaje ,$_POST['descripcion'],$_POST['tipo_habitaciones'],$_POST['servicios_hotel']);
+            elseif(true){//validData(null /* $_POST */ , array("titulo","nombre_hotel","direccion_hotel","cant_personas","cant_habitaciones","fecha_in","fecha_out","descripcion","tipo_habitaciones","servicios_hotel"))){
+                $latitud=$_POST['latitud'];
+                $servicios_hotel=$_POST['servicios_hotel'];
+                // if (isset($_POST['latitud']))
+                //     {$latitud=$_POST['latitud'];}
+                // else
+                //     {$latitud=null;}
+
+                // if (isset(($_POST['servicios_hotel'])))
+                //     $servicios_hotel=$_POST['servicios_hotel'];
+                // else
+                //     $servicios_hotel=null;
+                $id_hotel = $this->model->add_hotel($_POST['titulo'],$_POST['nombre_hotel'],$_POST['direccion_hotel'],$_POST['cant_personas'],$_POST['cant_habitaciones'],$_POST['fecha_in'],$_POST['fecha_out'], $id_viaje ,$_POST['descripcion'],$_POST['tipo_habitaciones'],$servicios_hotel, $latitud, $_POST['longitud']);
             }else{
                 //Error en carga de datos.
                 $id_hotel = -2; //-2 para diferenciarlo del error en el model/DB.
             }
-
+            $this->view->procesando();
             /*
 
             //Si id_hotel es menor a 1, entonces falló el insert.

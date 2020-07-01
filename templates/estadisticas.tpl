@@ -12,9 +12,10 @@
         <div class="container">
             <h4>Estadisticas Del Viaje</h4>
             <ul class="list-group">
-            {foreach from=$Estadisticas item=estadistica}
-            <li class="list-group-item"> Km Recorridos: {$estadistica['km_recorrido']} - Cantidad Paises Visitados: $ {$estadistica['cant_paises_visitados']} - huella carbono: {$estadistica['huella_carbono']} - Horas Viajadas: {$estadistica['horas_viajadas']}</li>
-            {/foreach}
+                <li class="list-group-item"> Km Recorridos: {$Estadistica->km_recorridos}</li>
+                <li class="list-group-item"> Países visitados: {$Estadistica->cant_paises_visitados}</li>
+                <li class="list-group-item"> Huella Carbono: {$Estadistica->huella_carbono}</li>
+                <li class="list-group-item"> Horas viajadas: {$Estadistica->horas_viajadas}</li>
             </ul>
         </div>
     </body>

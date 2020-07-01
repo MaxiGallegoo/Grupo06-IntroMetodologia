@@ -11,7 +11,8 @@
     $router->addRoute("hotel/nuevo/:ID","POST","controller","insertHotel");
     $router->addRoute("hotel/nuevo","POST","controller","insertHotel");
     $router->addRoute("hotel/mail","POST","controller","leerMail");
-
+    $router->addRoute("estadistica/:ID","GET","controller","verEstadistica");
+    $router->addRoute("mapa/:ID","GET","controller","verMapa");
     /*
     //Hardcode para testing.
     $router->addRoute("hardcode_testing_addHotel","GET","controller","testingModel_addHotel");

@@ -14,18 +14,27 @@
 			padding: 0;
 		}
 	</style>
+</head>
+<body>
+	<div id="map" ></div>
+	<a href="{BASE_URL}">VOLVER</a>
+	<div>
+		<ul id="data">
+		</ul>
+	</div>
 	<script>
 	function initMap() {
 			var lista={$lista};
+			var divdata=document.getElementById('data');
 			var mapOptions = {
 				zoom: 14,
 				center: new google.maps.LatLng(lista[0][0],lista[0][1]),
 				mapTypeId: 'roadmap'
 			};
-			
+			console.log(lista);
 			var map = new google.maps.Map(document.getElementById('map'), mapOptions);
 			for(i=0;i<lista.length;i++){
-				var p1 = { lat:  lista[i][0], lng: lista[i][1]};
+				var p1 = { lat:  lista[i][0]*1, lng: lista[i][1]*1};
 				var marker = new google.maps.Marker({ 
 					position: p1,
 					map: map,
@@ -36,12 +45,10 @@
 							text: lista[i][2],
 							},
 					});
+				divdata.innerHTML+="<li>"+lista[i][2]+" - "+lista[i][3]+"</li>";
 			}
 	}
 	</script>
-</head>
-<body>
-	<div id="map"></div>
 	<script async defer src="https://maps.googleapis.com/maps/api/js?callback=initMap">
 	</script>
 </body>
